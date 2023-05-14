@@ -23,32 +23,51 @@ Failed Connections
 IP3:port
 ```
 
-It can also be used with a JSON file with the `-r` option:
+It can also be used with a JSON file with the `-f` option:
 
 ``` bash
-$ servercheck -r servers.json
+$ servercheck -f servers.json
 Successful Connections
 ----------------------
-IP1:port
-IP2:port
-
+IP1:PORT1
+IP1:PORT2
 Failed Connections
 ------------------
-IP3:port
+IP1:PORT3
+IP2:PORT1
 ```
 
 Here's what a JSON file that could be passed in as a argument looks like:
 ``` JSON
 [
-    "JSONIP:PORT",
-    "JSONIP:PORT",
-    "JSONIP2:PORT2"
+    "IP1:PORT1",
+    "IP1:PORT2"
+    "IP1:PORT3",
+    "IP2:PORT1"
 ]
+```
+
+You can also have it output the values as a JSON file, with the `-j` option. Here's what that would look like and what it would output.
+``` bash
+$ servercheck -f servers.json -j output.json
+... Done!
+
+$ cat output.json
+{
+    "success": [
+        "IP1:PORT1",
+        "IP1:PORT2"
+    ],
+    "failure": [
+        "IP1:PORT3",
+        "IP2:PORT1"
+    ]
+}
 ```
 
 ## Development
 
-To use `servercheck` you'll need to have Python >= 3.7 and [`pipenv`][1] installed. You can then activate a virtualenv for the project and get the dependencies by these commands:
+To use `servercheck` you'll need to have Python >= 3.7 and [`pipenv`][1] installed. You can then activate a virtualenv for the project and get the dependencies via these commands:
 
 ``` bash
 $ pipenv install --dev

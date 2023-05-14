@@ -5,8 +5,12 @@ name = "pypi"
 
 [packages]
 click = "*"
+requests = "*"
+asyncio = "*"
 
 [dev-packages]
+black = "*"
+twine = "*"
 
 [requires]
 python_version = "3.7"

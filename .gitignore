@@ -161,3 +161,4 @@ cython_debug/
 
 # Dev. stuff
 json_test.json
+.vscode/
