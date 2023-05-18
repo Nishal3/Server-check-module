@@ -16,7 +16,7 @@ NAME = "servercheck"
 DESCRIPTION = (
     "CLI to ensure that HTTP requests can be made to various server/port combinations"
 )
-URL = "https://github.com/me/myproject"
+URL = "https://github.com/Nishal3/Server-check-module"
 EMAIL = "nepalnishal4@gmail.com"
 AUTHOR = "Nishal Nepal"
 REQUIRES_PYTHON = ">=3.7.0"
